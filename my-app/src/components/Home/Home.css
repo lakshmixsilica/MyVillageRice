@@ -1,0 +1,254 @@
+.imageconvention {
+    padding-top: 8px;
+    background-position: center;
+    background-Size:cover; 
+    /* width:100%;
+    height:700px;
+     */
+}
+.lgim{
+    padding-left: 0px;
+    margin-left:50px;   
+}
+.navbar-collapse{
+    padding-right: 50px;
+}
+/* .btn{
+    margin-left: 6px;
+}
+.indiaimage{
+    padding-left: 6px;
+} */
+/* .searchbar{
+    padding: 100px;
+    padding-top: 350px;
+} */
+.headsec
+{
+    width:101%;
+}
+/* .mask
+{
+    margin-top: 25%;
+} */
+.searchdiv{
+    background-Color:white;
+    width:100%;
+    height:70px;
+    border-radius: 5px;
+}
+.locatetxt{
+    width:160px;
+    padding-left:30px;
+}
+.second{
+    padding-top:18px;
+    padding-left: 30px;
+}
+.txtimg{
+    padding-top:5px;
+}
+.typetxt{
+    width:250px;
+    padding-left:30px;
+}
+.Guesttxt{
+    width:140px;
+    padding-left:30px;
+}
+.third{
+    padding-top: 18px;
+    padding-left: 140px;
+}
+.fourth{
+    padding-top: 18px;
+    padding-left: 140px;
+}
+.Datetxt{
+    width:150px;
+    padding-left:30px;
+}
+
+.five{
+    padding-left: 128px;
+    /* width:100%;   */
+}
+.searchexbtn{
+    width: 116%;
+    height: 100%;
+}
+
+.exploremore1
+{
+    width: 180px;
+    height: 50px;
+    /* padding-left: 15px; */
+    background-color: red; 
+    font-size: 20px;
+
+}
+.frmtxt{
+    margin-top: -2%;
+}
+.txtex
+{
+    margin-left: 10%;
+}
+ .txtex1
+ {
+    margin-left: 40%;
+ }
+ .txtex2
+ {
+    margin-left: 25%;
+ }
+.displayimages{
+    background-color:#573791;
+    padding:15px;
+}
+.imagesall
+{
+    justify-content: center;
+    padding: 0px;
+}
+.letstxt{
+    margin-left: 32%;
+}
+.imagestxt{
+    color:white;
+    font-size:13px;
+}
+.btxt{
+    justify-content: center;
+    padding: 30px;
+}
+
+.maintitle{
+    justify-content: center;
+    padding: 35px;
+}
+.ptxt
+{
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+
+
+.cardimgtxt
+{
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+}
+
+.txtcard{
+    justify-content: center;
+    padding:5%;
+}
+/* .cardimgtxt
+{
+    width:100%;
+    height:95%;
+} */
+.cardstxt
+{
+    padding: 5px;
+    padding-top:45px;
+}
+.cardimg
+{
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+}
+.cardimgs1
+{
+    padding:80px;
+   
+}
+/* .card1
+{
+    height: 175px;
+    width: 350px;
+} */
+.cardimg
+{
+    height: 175px;
+    width: 390px; 
+}
+/* .cardhghincrmnt
+{
+    height: 225px;
+    width: 350px;
+} */
+.cardimghghincrmnt{
+    height: 225px;
+    width: 380px;
+}
+.cardimgs2
+{
+    padding:0px; 
+}
+ .twoimgs1
+{
+    padding-top: 35px;
+} 
+
+/* .card2{
+    height: 200px;
+    width: 540px; 
+} */
+ .cardimg2
+{
+    height: 200px;
+    width: 600px; 
+} 
+.maincardimage
+{
+    padding:80px
+}
+.maincardimg1
+{
+    width:350px;
+    height:380px;
+}
+.cardimageexamples
+{
+    height: 200px;
+    width: 399px;
+}
+.txtinput
+{
+    width:395px;
+    height:60px;
+}
+.txtinput2
+{
+    height: 50px;
+}
+.txtdiscription
+{width:29%;}
+
+.btnrequest
+{
+    width:180px;
+    height:50px;
+     /* background-color:red;  */
+}
+.searchbar{
+    background-color: white;
+}
+
+.mask{
+    font-size: 400%;
+    margin-top:2%;
+    font-weight: 900;
+}
+
+.pad{
+    font-size: 600%;
+    padding-left: 22%;
+    color: white;
+    font-weight: 900;
+}
+
+.ksc{padding:'20%'}
