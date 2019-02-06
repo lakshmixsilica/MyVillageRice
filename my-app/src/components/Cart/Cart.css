@@ -1,0 +1,47 @@
+.updatebtn{
+    color:#0c4d6c;
+    height:80%;
+}
+.updatebtn:hover{
+    background-color: #0c4d6c;
+    color: white;
+}
+.selectnumber{
+    display: block;
+    float: left;
+    margin-right: 4px;
+}
+.form-control1{
+    width:33%
+}
+.c{
+    background-color: #e34f30;
+    color: white;
+    width: 100%;
+    height: 14%;
+}
+.dec{
+    height: 35px;
+    width: 21%;
+    border: none;
+    border-color: #efefef;
+    background-color: transparent;
+    color: #0c4d6c; 
+}
+.dec:hover{
+    background-color: #0c4d6c;
+    color:white;
+}
+.number{
+    width: 42px;
+    height: 35px;
+    text-align: center;
+}
+.info{
+    font-size: 13px;
+    color: grey;
+}
+.shopping{
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
