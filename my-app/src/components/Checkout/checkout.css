@@ -1,0 +1,34 @@
+.txt{color: #0c4d6c;}
+.cpage{
+    padding-top: 5%;
+    padding-left: 2%;
+}
+
+.chcktxt
+{
+    width: 100%;
+    height: calc(3.05rem + 0px);
+}
+.submit{
+    background-color:#0c4d6c;
+    color:white;
+}
+.heading{
+    padding-left: 10%;
+    color: grey;
+}
+.checkout-progress{
+    position: relative
+}
+
+.list{
+    display: table;
+}
+.bg{
+    padding-top: 4%;
+    padding-bottom: 4%
+}
+.ctext{
+    width:95%;
+    height: calc(3.25rem + 2px);
+}

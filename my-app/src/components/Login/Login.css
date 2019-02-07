@@ -1,7 +1,10 @@
 
-.logintxt{
+.loginform{
     width: 85%;
      height: calc(3.25rem + 2px); 
+}
+.ftxt{
+    width:85%;
 }
 .text{
     background-color:#0c4d6c;
@@ -9,7 +12,7 @@
     /* height:120%; */
     margin-left: 6%; 
 }
-.btntxt{
+.btntxt1{
     color:#0c4d6c;
     height:120%;
     border:2px solid #0c4d6c;
@@ -24,7 +27,7 @@
     padding-left: 10%;
     padding-top:3%
 }
-.btntxt:hover{
+.btntxt1:hover{
     background-color: #0c4d6c;
     color: white
 }
@@ -34,9 +37,17 @@
 .bg{
     padding-top: 4%;
     padding-bottom: 4%;
-    background: #DDE1E6;
+   
 }
 .heading{
     color:grey;
     padding-left: 10%;
+}
+.maintxt{
+    width: 85%;
+    height: 150%;
+}
+.ftext{
+width:85%;
+height: calc(3.25rem + 2px); 
 }
