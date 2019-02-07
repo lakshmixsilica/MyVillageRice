@@ -7,28 +7,26 @@ import './Header.css';
 class Header extends React.Component {
     constructor (){
         super();
-        this.state = {
+        this.state = { name:'',
           location : '',eventtype:'',guests:'',eventdate:'',result:'', modal2: false,
         };
         }
         toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
     renderButton1() {
  if (this.state.name !== '' && this.state.name !== null) {
-          return (
-            <div>
-                 <div className="dropdown">
-
-
+return (
+ <div>
+   <div className="dropdown">
 <div className="row">
   <div className="col-sm-3 col-md-3">
     <button className="dropdown-item" type="button" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
       {this.state.name}
     </button>
   </div>
-  <div className="col-sm-3 col-md-3"> <Link to="/Login"><strong className="black-text">Login <MDBIcon icon="lock" /> </strong></Link></div>
-  {/* <div className="col-sm-3 col-md-3"><button className="dropdown-item" href="/Userdetails">Profile</button></div> */}
-  <div className="col-sm-3 col-md-3"> <Link to="/"><strong className="black-text">Logout <i className="fa fa-lock" aria-hidden="true"></i></strong></Link></div>
-  {/* <div className="col-sm-3 col-md-3"> <button className="dropdown-item" href="#" onClick={this.logout}>Logout</button></div> */}
+  {/* <div className="col-sm-3 col-md-3"> <Link to="/Login"><strong className="black-text">Login <i className="fa fa-lock" aria-hidden="true"></i> </strong></Link></div> */}
+  <div className="col-sm-3 col-md-3"><button className="dropdown-item" href="/Userdetails">Profile</button></div> 
+  {/* <div className="col-sm-3 col-md-3"> <Link to="/"><strong className="black-text">Logout <i className="fa fa-lock" aria-hidden="true"></i></strong></Link></div> */}
+  <div className="col-sm-3 col-md-3"> <button className="dropdown-item" href="#" onClick={this.logout}>Logout</button></div> 
 </div>
 </div>
 </div>
@@ -59,7 +57,7 @@ class Header extends React.Component {
               <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{ marginLeft: "10%" }}>
                 <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                <Link to="/products">Shop</Link>
+                <Link  className="nav-link" to="/Products">Shop</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">About</a>
@@ -77,7 +75,8 @@ class Header extends React.Component {
               <div>
                 {this.state.cartno}Items
 </div>
-              <a href="/Shopingcart" style={{ color: 'black' }}> <i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> </a>
+              {/* <a href="/Shopingcart" style={{ color: 'black' }}> <i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i> </a> */}
+              <Link style={{ color: 'black' }}  to='/Cart'><i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></Link>
               </form>
           </div>
         </nav>
