@@ -8,9 +8,9 @@ class Cart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            counter: 1, price1: 80, result: '', productdetails: [],
-            id: '', ids: '', ProductId: '', Productname: '', Price: '', Quantity: '', weight: '', ShortDescription: '', LongDescription: '', Remarks: '', Available: '', HSNcode: '', SGST: '', CGST: '', Discount: '',
-            brand: '', Image: '', Manfacturedate: '', Expirydate: '', createdate: '', Updateddate: '', cartlist: []
+            counter: 1, price1: 80, result: '', productdetails: [],items:[],
+            id: '', ids: '', ProductId: '', Productname: '', Price: '', Quantity: '1', weight: '', ShortDescription: '', LongDescription: '', Remarks: '', Available: '', HSNcode: '', SGST: '', CGST: '', Discount: '',
+            brand: '', Image: '', Manfacturedate: '', Expirydate: '', createdate: '', Updateddate: '', cartlist: [],Url:'http://api.myvillagerice.com/'
         };
         this.state.ids = localStorage.getItem('cartno')
          this.increment = this.increment.bind(this);
@@ -18,10 +18,11 @@ class Cart extends Component {
         this.remove = this.remove.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.checkout = this.checkout.bind(this);
+        this.add=this.add.bind(this);
     }
     handleChange(e) {
         const state = this.state
-        state[e.target.className] = e.target.value;
+        state[e.target.id] = e.target.value;
         this.setState(state);
     }
     componentWillMount() {
@@ -29,14 +30,32 @@ class Cart extends Component {
     }
 
     getitems() {
-        fetch('http://localhost:64017/api/Product/GetProductlistbyid?id=' + this.state.ids).then(res => res.json()).then(details => {
+         
+        // fetch('http://localhost:64017/api/Product/GetProductlistbyid?id=' + this.state.ids).then(res => res.json()).then(details => {
+           fetch(this.state.Url+'api/Product/GetProductlistbyid?id=' + this.state.ids).then(res => res.json()).then(details => {
             this.setState({
                 productdetails: details
             });
+            // details.productitems.forEach(function(productitems){
+            //     this.add(productitems);
+            // });
 
         })
     }
-    increment() {
+
+    add(productitems)
+    {
+        this.setState(prevState=>({
+            items: [
+                prevState.productdetails,
+                {
+                     id:productitems.id,
+                     Quantity:parseInt(productitems.Quantity)
+                }
+            ]
+        }))
+    }
+    increment(id) {
         this.setState({
             counter: this.state.counter + 1
         });
@@ -45,7 +64,7 @@ class Cart extends Component {
         //       result:cal
         //       });
     }
-    decrement() {
+    decrement(id) {
         if (this.state.counter > 0) {
             this.setState({
                 counter: this.state.counter - 1
@@ -132,16 +151,17 @@ class Cart extends Component {
                                                     <div className="col-sm-12 col-md-12">
                                                         <div className="num">
                                                             <div className="selectnumber">
-                                                                {/* <input type="number"  name="quantity" min="1" max="100"  onChange={this.handleChange} /> */}
-                                                                <button onClick={this.decrement} className="fa fa-minus dec"></button>&nbsp;
-                                                <input type="text" className="number" id={item.id} value={this.state.counter} onChange={this.handleChange} />&nbsp;
-                                                <button onClick={this.increment} className="fa fa-plus dec"></button>
+                                                               {/* <input type="number" id="Quantity" name="Quantity" min="1" max="100"  onChange={this.handleChange1} />  */}
+                                                                <button onClick={()=>this.decrement(item.id)} className="fa fa-minus dec"></button>&nbsp;
+                                                                {/* <div className="quantity">{this.state.counter}</div>&nbsp; */}
+                                                      <input type="text" className="number" id={item.id} value={this.state.counter} onChange={this.handleChange} />&nbsp; 
+                                                <button onClick={()=>this.increment(item.id)} className="fa fa-plus dec"></button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    {this.state.counter * item.Price}
+                                                    {this.state.Quantity * item.Price}
                                                 </td>
                                                 {/* <td><button onClick={(e)=>this.remove(item.id)} ><i className="fa fa-times fa-1x" aria-hidden="true" ></i></button></td> */}
                                                 <td><i className="fa fa-times fa-1x" aria-hidden="true" onClick={(e) => this.remove(item.id)} ></i></td>

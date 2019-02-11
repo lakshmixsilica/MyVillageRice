@@ -16,7 +16,7 @@ class Products extends Component{
         this.state={
             productdetails:[],
             id:'',ProductId:'', Productname:'',Price:'',Quantity:'',weight:'',ShortDescription:'',LongDescription:'',Remarks:'',Available:'',HSNcode:'',SGST:'',CGST:'',Discount:'',
-            brand:'',Image:'',Manfacturedate:'',Expirydate:'',createdate:'',Updateddate:'',cartlist:[]
+            brand:'',Image:'',Manfacturedate:'',Expirydate:'',createdate:'',Updateddate:'',cartlist:[],Url:'http://api.myvillagerice.com/'
 
         }
         // this.getproductdetails=this.getproductdetails.bind(this);
@@ -29,7 +29,8 @@ class Products extends Component{
     } 
     getproductdetails()
     { var Available1= "Available";
-        fetch('http://localhost:64017/api/Product/Productsavailabe?Available='+Available1).then((res)=>res.json()).then((res)=>{
+        // fetch('http://localhost:64017/api/Product/Productsavailabe?Available='+Available1).then((res)=>res.json()).then((res)=>{
+            fetch(this.state.Url+'api/Product/Productsavailabe?Available='+Available1).then((res)=>res.json()).then((res)=>{
          this.setState({
             productdetails:res
          });
