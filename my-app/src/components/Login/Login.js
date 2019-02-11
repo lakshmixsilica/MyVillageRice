@@ -14,6 +14,9 @@ class Login extends React.Component{
           items: [],Url:'http://api.myvillagerice.com/'
         }
         this.handleChange=this.handleChange.bind(this);
+        this.Savedetails = this.Savedetails.bind(this);
+        this.logindetails = this.logindetails.bind(this);
+        this.sendmail = this.sendmail.bind(this);
         
       }
       toggle = () => {
@@ -26,7 +29,80 @@ class Login extends React.Component{
       state[e.target.id]=e.target.value;
       this.setState(state);
     }
-    
+    sendmail(e) {
+      e.preventDefault();
+      const { sentemail } = this.state;
+      alert(sentemail)
+      fetch(this.state.Url+'api/Customer/SendPasswordmail?email=' + sentemail, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).then((response) => response.json()).then((responseJson) => {
+        // window.location.reload();
+        this.toggle();
+        this.setState({ sentemail: '' });
+        return responseJson.success;
+      })
+  
+    }
+    logindetails(e) {
+      var url = document.referrer;
+      alert(url);
+      var url1 = url.split('://')[1].split('/')[1]
+      const { email, password, Firstname, Lastname, Email, Password, confirmpassword, items } = this.state
+      e.preventDefault();
+      if (email != '', password != '') {
+        fetch(this.state.Url+'api/Customer/UserLogin?email='+email+'&&password='+password,{
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+        }).then((response) => response.json())
+          .then((response) => {
+            if (response.Firstname != null && response.Email != null) {
+              localStorage.setItem('Firstname', response.Firstname);
+              localStorage.setItem('Email', response.Email);
+              this.props.history.push("/" + url1);
+              alert('Login Successfully');
+            this.setState({email:'',password:''});
+            }
+            else { alert("Please Login with valid Email and Password"); }
+            return response.success;
+          }).catch((error) => {
+            console.error(error);
+            alert('Please Login with valid Email and Password');
+          });
+      }
+    }
+    Savedetails(e) {
+      const { Firstname, Lastname, Email, Password, confirmpassword } = this.state;
+      e.preventDefault();
+      fetch(this.state.Url+'api/Customer/UserRegister', {
+        method: 'POST',
+        body: JSON.stringify({ Firstname: Firstname, Lastname: Lastname, Email: Email, Password: Password, confirmpassword: confirmpassword }),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).then((response) => response.json())
+        .then((responseJson) => {
+  
+          window.location.reload();
+  
+          this.setState({ Firstname: '', Lastname: '', Email: '', Password: '', confirmpassword: '' });
+          alert('Registered Successfully');
+          return responseJson.success;
+  
+        })
+        .catch((error) => {
+          console.error(error);
+          alert('failed');
+        });
+  
+    }
     render(){
         return(
             <div className="ln">
@@ -41,7 +117,7 @@ class Login extends React.Component{
               <h2 className="txt">Sign In</h2>
               <div className="row">
                 <div className="col-sm-12 col-md-12 form-group">
-                  <input type="text" className="loginform form-control" placeholder="Email" id="email " name="email"  onChange={this.handleChange} value={this.state.email} />
+                  <input type="text" className="maintxt form-control" placeholder="Email" id="email" name="email"  onChange={this.handleChange} value={this.state.email} />
                 </div>
                 <div className="col-sm-12 col-md-12 form-group">
                   <input type="password" placeholder="Password" id="password" name="password" className="maintxt form-control" onChange={this.handleChange} value={this.state.password} />
