@@ -33,7 +33,7 @@ class Login extends React.Component{
       e.preventDefault();
       const { sentemail } = this.state;
       alert(sentemail)
-      fetch(this.state.Url+'api/Customer/SendPasswordmail?email=' + sentemail, {
+      fetch(this.state.Url+'api/Customer/SendPasswordmail?email='+sentemail, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
