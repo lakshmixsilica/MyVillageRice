@@ -26,6 +26,7 @@ class Login extends React.Component{
       state[e.target.id]=e.target.value;
       this.setState(state);
     }
+    
     render(){
         return(
             <div className="ln">
