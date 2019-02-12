@@ -2,20 +2,14 @@ import React, { Component } from 'react';
 import './Cart.css';
 import Header from '../Header/Header'
 import Basmati from '../../images/Basmati.jpg';
-import $ from 'jquery';
 
 
 class Cart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-<<<<<<< HEAD
-            counter: 1, price1: 80, result: '', productdetails: [],items:[],quantity:'',
-            id: '', ids: '', ProductId: '', Productname: '', Price: '', Quantity: '1', weight: '', ShortDescription: '', LongDescription: '', Remarks: '', Available: '', HSNcode: '', SGST: '', CGST: '', Discount: '',
-=======
             counter: 1, price1: 80, result: '', productdetails: [],items:[],
             id: '', ids: '', ProductId: '', Productname: '', Price: '', quantity: '1', weight: '', ShortDescription: '', LongDescription: '', Remarks: '', Available: '', HSNcode: '', SGST: '', CGST: '', Discount: '',
->>>>>>> ca505cd6a52a5808b641b859a49adb561fecf9f8
             brand: '', Image: '', Manfacturedate: '', Expirydate: '', createdate: '', Updateddate: '', cartlist: [],Url:'http://api.myvillagerice.com/'
         };
         this.state.ids = localStorage.getItem('cartno')
