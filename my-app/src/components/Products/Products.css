@@ -17,13 +17,13 @@
 .details{
     padding-left: 15%;
 }
-.add{
+.add1{
     border: 2px solid#e34f30;
     color:#e34f30;
     background-color: white;
 
 }
- .add:hover{
+ .add1:hover{
    background-color: #e34f30;
     color:white;
 } 

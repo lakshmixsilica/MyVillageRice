@@ -6,6 +6,7 @@ import Checkout from './components/Checkout/Checkout';
 import Products from './components/Products/Products';
 import Cart from './components/Cart/Cart';
 
+
 const Routes = () => (
 <BrowserRouter>
 <Switch>
@@ -15,6 +16,7 @@ const Routes = () => (
 
     <Route path="/Products" component={Products}/>
     <Route path="/Cart" component={Cart}/>
+   
 </Switch>
 </BrowserRouter>
 )

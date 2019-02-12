@@ -8,7 +8,7 @@ class Cart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            counter: 1, price1: 80, result: '', productdetails: [],items:[],
+            counter: 1, price1: 80, result: '', productdetails: [],items:[],quantity:'',
             id: '', ids: '', ProductId: '', Productname: '', Price: '', Quantity: '1', weight: '', ShortDescription: '', LongDescription: '', Remarks: '', Available: '', HSNcode: '', SGST: '', CGST: '', Discount: '',
             brand: '', Image: '', Manfacturedate: '', Expirydate: '', createdate: '', Updateddate: '', cartlist: [],Url:'http://api.myvillagerice.com/'
         };
@@ -141,7 +141,7 @@ class Cart extends Component {
                                                 <td>
                                                     <div className="col-sm-12 col-md-12">
                                                         <div className="h6">
-                                                            <a href="/">PURPLE FITNESS TRACKER</a>
+                                                            <a href="/">Basmathi</a>
                                                             <p><small>₹{item.Price}</small></p>
                                                         </div>
                                                         <p>Bulk Pricing</p>
@@ -161,7 +161,7 @@ class Cart extends Component {
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    {this.state.Quantity * item.Price}
+                                                {this.state.quantity*item.Price}
                                                 </td>
                                                 {/* <td><button onClick={(e)=>this.remove(item.id)} ><i className="fa fa-times fa-1x" aria-hidden="true" ></i></button></td> */}
                                                 <td><i className="fa fa-times fa-1x" aria-hidden="true" onClick={(e) => this.remove(item.id)} ></i></td>

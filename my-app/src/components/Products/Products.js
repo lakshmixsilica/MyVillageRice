@@ -90,7 +90,7 @@ render(){
                                <div><span>₹{item.Price}</span></div>
                            </div>
                            <div>
-                           <button className="btn btn-sm add" onClick={(e)=>this.AddtoCart(item.id)} >Add To Cart</button>
+                           <button className="add1 btn btn-sm" onClick={(e)=>this.AddtoCart(item.id)} >Add To Cart</button>
                            </div>
                       </div>
                 ))}
