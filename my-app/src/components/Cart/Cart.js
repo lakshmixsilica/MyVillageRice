@@ -2,14 +2,20 @@ import React, { Component } from 'react';
 import './Cart.css';
 import Header from '../Header/Header'
 import Basmati from '../../images/Basmati.jpg';
+import $ from 'jquery';
 
 
 class Cart extends Component {
     constructor(props) {
         super(props);
         this.state = {
+<<<<<<< HEAD
             counter: 1, price1: 80, result: '', productdetails: [],items:[],quantity:'',
             id: '', ids: '', ProductId: '', Productname: '', Price: '', Quantity: '1', weight: '', ShortDescription: '', LongDescription: '', Remarks: '', Available: '', HSNcode: '', SGST: '', CGST: '', Discount: '',
+=======
+            counter: 1, price1: 80, result: '', productdetails: [],items:[],
+            id: '', ids: '', ProductId: '', Productname: '', Price: '', quantity: '1', weight: '', ShortDescription: '', LongDescription: '', Remarks: '', Available: '', HSNcode: '', SGST: '', CGST: '', Discount: '',
+>>>>>>> ca505cd6a52a5808b641b859a49adb561fecf9f8
             brand: '', Image: '', Manfacturedate: '', Expirydate: '', createdate: '', Updateddate: '', cartlist: [],Url:'http://api.myvillagerice.com/'
         };
         this.state.ids = localStorage.getItem('cartno')
@@ -56,14 +62,32 @@ class Cart extends Component {
         }))
     }
     increment(id) {
-        this.setState({
-            counter: this.state.counter + 1
-        });
+        // alert(id);
+      const cartids= localStorage.getItem('cartno');
+      const cartid=cartids.trim(',').split(',');
+      alert(cartid);
+      for (var i = 0; i < cartid.length; i++)
+      {
+           var cid=cartid[i].replace(/\s*$/, "")
+           if(id==cid)
+           {
+            alert(cid);
+            this.setState({
+                quantity:this.state.counter + 1
+
+            })
+        
+        
+           }
+           
+      }
+       
         // const cal=this.state.counter * this.state.Price
         //     this.setState({
         //       result:cal
         //       });
     }
+   
     decrement(id) {
         if (this.state.counter > 0) {
             this.setState({
@@ -152,9 +176,10 @@ class Cart extends Component {
                                                         <div className="num">
                                                             <div className="selectnumber">
                                                                {/* <input type="number" id="Quantity" name="Quantity" min="1" max="100"  onChange={this.handleChange1} />  */}
-                                                                <button onClick={()=>this.decrement(item.id)} className="fa fa-minus dec"></button>&nbsp;
+                                                                {/* <button onClick={()=>this.decrement(item.id)} className="fa fa-minus dec"></button>&nbsp; */}
+                                                              <button onClick={()=>this.decrement(item.id)} className="fa fa-minus dec"></button>&nbsp; 
                                                                 {/* <div className="quantity">{this.state.counter}</div>&nbsp; */}
-                                                      <input type="text" className="number" id={item.id} value={this.state.counter} onChange={this.handleChange} />&nbsp; 
+                                                      <input type="text" className="number" id={item.id} name={item.id} value={this.state.quantity} onChange={this.handleChange} />&nbsp; 
                                                 <button onClick={()=>this.increment(item.id)} className="fa fa-plus dec"></button>
                                                             </div>
                                                         </div>
